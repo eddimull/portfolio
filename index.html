@@ -1,0 +1,257 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>EM Portfolio</title>
+  <meta name="description" content="Eddie Muller portfolio">
+  <meta name="author" content="Eddie Muller">
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+.navbar-fixed-left {
+  width: 140px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+.navbar-brand{
+    display:block !important;
+    float: left !important;
+    height: 50px !important;
+    padding: 15px 15px !important;
+    font-size: 18px !important;
+    line-height: 20px !important;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #262626 !important;
+    text-decoration: none !important;
+    background-color: #f5f5f5 !important;
+}
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 139px;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 160px;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 140px;
+}
+
+.navbar-nav .open .dropdown-menu {
+     position: absolute  !important; 
+     float: left  !important; 
+    background-color: #fff !important;
+    -webkit-background-clip: padding-box !important;
+    background-clip: padding-box !important;
+    border: 1px solid #ccc !important;
+    border: 1px solid rgba(0,0,0,.15) !important;
+    border-radius: 4px !important;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
+}
+
+
+body{
+   background: url(weirdBG.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.hazeCover{
+  position:absolute;
+  height:100%;
+  width:100%;
+  opacity:0;
+  background:#ffff2d;
+  }
+
+  #infoRow{
+    border:1em dashed magenta;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  }
+</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-left" style="z-index:90">
+  <a class="navbar-brand" href="#">EMüller</a>
+  <ul class="nav navbar-nav">
+   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Personal Projects <span class="caret"></span></a>
+     <ul class="dropdown-menu" role="menu">
+      <li><a data-category="personal" data-project="0" href="#">Gif it to me</a></li>
+      <li><a data-category="personal" data-project="1" href="#">Watch</a></li>
+      <li><a data-category="personal" data-project="2" href="#">Store</a></li>
+      <li><a data-category="personal" data-project="3" href="#">Bathroom Pi</a></li>
+     </ul>
+   </li>
+    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Client work and job <span class="caret"></span></a>
+     <ul class="dropdown-menu" role="menu">
+      <li><a data-category="client" data-project="0" href="#">Apex Innovations, LLC</a></li>
+      <li><a data-category="client" data-project="1" href="#">Laurie J James</a></li>
+      <li><a data-category="client" data-project="2" href="#">Cochrane Technologies</a></li>
+     </ul>
+   </li>
+   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Doodles<span class="caret"></span></a>
+     <ul class="dropdown-menu" role="menu">
+      <li><a data-category="doodles" data-project="0" href="#">House of cards intro http://verylegitwebsite.com/houseofcards2.html</a></li>
+      <li><a data-category="doodles" data-project="1" href="#">Web RTC</a></li>
+      <li><a data-category="doodles" data-project="2" href="#">Canvas game</a></li>
+      <li><a data-category="doodles" data-project="3" href="#">Websocket chat</a></li>
+      <li><a data-category="doodles" data-project="4" href="#">LA Parades</a></li>
+      <li><a data-category="doodles" data-project="5" href="#">http://verylegitwebsite.com/</a></li>
+     </ul>
+   </li>
+  </ul>
+</div>
+<div class="hazeCover" style="z-index:-1"></div>
+<div class="container" style="margin-left: 140px;">
+ <div id="infoRow" style="margin-left:20px; background:#fff; padding:1em" class="col-md-4">
+   <h1>Hello!</h1>
+   
+   <p>Select a project from the left hand side to see some of the things I do.</p>
+
+ </div>
+
+ <div class="panel panel-default">
+        <div class="panel-heading">Header</div>
+        <div class="panel-body">
+          Description
+        </div>
+      </div>
+</div>
+<script>
+	var projects =  {
+ 	personal: [{
+ 		project: "Gif it to me",
+ 		mediaUrl:"gifIt.PNG",
+    url: "http://gifittome.io/",
+ 		description:"<br/>Repo: <a href='https://github.com/eddimull/gifittome'>https://github.com/eddimull/gifittome</a><br/><br/>A MMS based gif delivery service. Running on a Laravel backend which hooks into the Twilio SMS API. "
+ 	}, {
+ 		project: "Watch",
+ 		mediaUrl:"watch.PNG",
+    url: "http://eddie-muller.com/watch/",
+ 		description:"<br/>Repo: <a href='https://github.com/eddimull/watch'>https://github.com/eddimull/watch</a><br/><br/>A user (/u/Nochinnn) on <a href='https://www.reddit.com/r/design'>reddit's design subreddit</a> made a post of a watch they made with Adobe illustrator. I took it to the next step to make it actually tell the time. I also learned about the two second delay with Mondaine brand watches on the minute mark. Not very difficult perse, but aesthetically it looks pleasing."
+ 	}, {
+ 		project: "Store",
+ 		mediaUrl:"store.PNG",
+    url: "http://shisha.run/",
+ 		description:"<br/>Repo: <a href='https://bitbucket.org/eddimull/store'>https://bitbucket.org/eddimull/store</a><br/><br/>WIP. Very very lightweight, fast store. I got tired of using terrible online stores that would sell Hookah products, so I took it into my own hands to see about writing one from scratch. The administrative panel is built out to create new products, administer users, move shipments, and monitor stock. On the client side, the backend is all in place except for product navigation and browsing. Uses Laravel, Rackspace CDN for image uploads, Stripe, the USPS API, Fedex API, and the UPS api."
+ 	}, {
+ 		project: "Bathroom Pi",
+ 		mediaUrl:"BathroomPi.mp4",
+    url: "https://github.com/eddimull/bathroomPi",
+ 		description:"<br/>Repo: <a href='https://github.com/eddimull/bathroomPi'>https://github.com/eddimull/bathroomPi</a><br/><br/>12 men to one single stalled bathroom to share throughout the business day led to many people getting up from their desks only to be greeted with a locked door. One Raspberry Pi, Node.js server, photocell resistor, and a websocket later, office employees now know through Darth Vader’s eyes on the admin site when the bathroom is occupied. Not only is there less frustrating time saved, users are presented with upbeat 90’s pop tunes while occupying the bathroom. Every time the light is turned on, it tracks the records in a MySQL database. Since putting in the Pandora addition, there has been a drop in time in the bathroom."
+ 	}],
+ 	client: [{
+ 		project: "Apex Innovations, LLC",
+ 		mediaUrl:"apex.PNG",
+    url: "https://www.apexinnovations.com/",
+ 		description:"My Current place of employment."
+ 	}, {
+ 		project: "Laurie J James",
+ 		mediaUrl:"laurie.PNG",
+    url: "http://www.lauriejjames.com/",
+ 		description:"A good friend and private client."
+ 	}, {
+ 		project: "Cochrane Technologies",
+ 		mediaUrl:"cochrane.PNG",
+    url: "http://www.cochranetech.com/",
+ 		description:"Former place of employment. Learned how to develop in ASP.net to make this website."
+ 	}],
+ 	doodles: [{
+ 			project: "House of cards intro",
+ 			mediaUrl:"houseOfCards.PNG",
+      url: "http://verylegitwebsite.com/houseofcards2.html",
+ 			description:"After House of Cards season 2 came out, I really like the aesthetics of the intro screen. I recreated it using javascript and CSS"
+ 		}, {
+ 			project: "Web RTC",
+ 			mediaUrl:"",
+      url: "http://sb.eddie-muller.com/webrtc/",
+ 			description:"What a difficult and annoying technology to implement. Basically it was skype without skype. The WebRTC standard isn't finalized at all, so at any given moment this can break. It's probably broken right now."
+ 		}, {
+ 			project: "Canvas game",
+ 			mediaUrl:"space.PNG",
+      url: "http://sb.eddie-muller.com/crappySpaceGame/spaceGame.html",
+ 			description:"My first foray into making something interactive with an HTML5 Canvas"
+ 		}, {
+ 			project: "Websocket chat",
+ 			mediaUrl:"chat.PNG",
+      url: "http://sb.eddie-muller.com:3000",
+ 			description:"Very very simple chat program that uses a websocket wrapper from socket.io. Runs on a Node.js server"
+ 		}, {
+ 			project: "LA Parades",
+ 			mediaUrl:"laparades.PNG",
+      url: " http://laparades.com/",
+ 			description:"Nothing here really. Just something I put together to track the parade route in Lafaytte. First time using the Google Maps API"
+ 		}, {
+ 			project: "A bit odd.",
+ 			mediaUrl:"legit.PNG",
+      url: " http://verylegitwebsite.com/",
+ 			description:"Just a silly thing I made for my friend Jim and his awful mustache. I did actually learn something when making this! MIDI files cannot be used as a src in an audio element. Seizure warning...."
+ 		}
+
+
+ 	],
+ }
+</script>
+
+
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      TweenMax.fromTo( $('#infoRow'),0.5,{y:-100,opacity:0,scale:3},{rotation:'-7',y:25,opacity:1,ease:Expo.easeOut,delay:0.5,scale:1} );
+      TweenMax.to( $('.hazeCover'),1,{opacity:0.25} );
+      TweenMax.to( $('.panel'),0,{y:-1000});
+
+      $('.dropdown-menu li').on('click',function()
+      {
+        $this = $(this);
+        $thisLink = $this.find('a');
+        var project = projects[$thisLink.data('category')][$thisLink.data('project')];
+
+        TweenMax.to( $('#infoRow'),0.3,{rotateY:90,x:500,opacity:0,ease:Expo.easeOut,onComplete:function(){
+           $('#infoRow').hide(); 
+        }});
+
+
+         TweenMax.to( $('.panel'),0.3,{y:-1000,ease:Expo.easeOut,onComplete:function(){
+                   $('.panel-heading').html(project.project);
+
+                   $('.panel-body').html("<div class='row'><div class='col-md-12'>URL: <a href='" + project.url + "'>" + project.url + "</a></div></div>");
+                   $('.panel-body').append("<div class='row'><div class='col-md-12'>" + project.description + "</div></div>");
+                   if(project.mediaUrl.indexOf('.PNG') !== -1)
+                   {
+                    
+                     $('.panel-body').append('<div style="margin-top:20px;"><img src="media/' + project.mediaUrl + '"/></div>');
+                   }
+                   else if(project.mediaUrl.indexOf('.mp4') !== -1)
+                   {
+                    $('.panel-body').append('<video style="margin-top:20px;" width="480" controls src="media/' + project.mediaUrl + '"> Your browser does not support the HTML5 video tag. </video>');
+                  }
+                   TweenMax.to( $('.panel'),0.5,{y:50,ease:Circ.easeOut});
+         }
+         });
+
+      });
+
+
+
+    });
+  </script>
+</body>
+</html>
